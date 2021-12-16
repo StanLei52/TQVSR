@@ -1,0 +1,38 @@
+{
+    "name": "AQVSR",
+    "n_gpu": 1,
+    "modal":{
+        "mask_ctx_text":false,
+        "mask_ctx_vis":false,
+        "mask_query_text": false,
+        "mask_query_vis": false
+    },
+    "arch": {
+        "ctx_layers":1,
+        "q_layers":1,
+        "type": "DME",
+        "args": {
+            "load_checkpoint" : ""
+        }
+    },
+    "optimizer": {
+        "type": "AdamW",
+        "args":{
+            "lr": 3e-5
+        }
+    },
+
+    "trainer": {
+        "epochs": 50,
+        "save_dir": "/home/stan/ai_assistant/code_release/AQVSR/DME_res",
+        "save_period": 10,
+        "verbosity": 2,
+        "monitor": "min val_loss_0",
+        "early_stop": 45,
+        "init_val": false,
+        "neptune": false
+    },
+    "visualizer": {
+        "type": ""
+    }
+}
